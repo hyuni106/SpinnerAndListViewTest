@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.user.yogiyocopy.R;
 import com.example.user.yogiyocopy.data.StoreData;
 
@@ -48,6 +49,7 @@ public class StoreAdapter extends ArrayAdapter<StoreData> {
 
         StoreData mData = mList.get(position);
         ImageView cescoImg = row.findViewById(R.id.cescoImg);
+        ImageView storeImg = row.findViewById(R.id.storeImg);
         ImageView star1 = (ImageView)row.findViewById(R.id.star1);
         ImageView star2 = (ImageView)row.findViewById(R.id.star2);
         ImageView star3 = (ImageView)row.findViewById(R.id.star3);
@@ -58,6 +60,8 @@ public class StoreAdapter extends ArrayAdapter<StoreData> {
         TextView timeTxt = row.findViewById(R.id.timeTxt);
         TextView costTxt = row.findViewById(R.id.costTxt);
         TextView payTxt = row.findViewById(R.id.payTxt);
+
+        Glide.with(mContext).load(mData.getImgPath()).into(storeImg);
 
         List<ImageView> stars = new ArrayList<>();
         stars.add(star1);

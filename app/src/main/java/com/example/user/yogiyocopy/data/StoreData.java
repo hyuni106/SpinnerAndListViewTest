@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class StoreData {
+    private String imgPath;
     private String storeName;
     private float avgRating;
     private int openTime;
@@ -19,13 +20,22 @@ public class StoreData {
     public StoreData() {
     }
 
-    public StoreData(String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco) {
+    public StoreData(String imgPath, String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco) {
+        this.imgPath = imgPath;
         this.storeName = storeName;
         this.avgRating = avgRating;
         this.openTime = openTime;
         this.closeTime = closeTime;
         this.minCost = minCost;
         this.isCesco = isCesco;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public String getStoreName() {
